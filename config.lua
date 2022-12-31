@@ -1,7 +1,7 @@
 Config = {}
 
 -- NPC Vehicle Lock States
-Config.LockNPCDrivingCars = true -- Lock state for NPC cars being driven by NPCs [true = locked, false = unlocked]
+Config.LockNPCDrivingCars = false -- Lock state for NPC cars being driven by NPCs [true = locked, false = unlocked]
 Config.LockNPCParkedCars = true -- Lock state for NPC parked cars [true = locked, false = unlocked]
 Config.UseKeyfob = false -- you can set this true if you dont need ui
 -- Lockpick Settings
@@ -54,6 +54,13 @@ Config.SharedKeys = { -- Share keys amongst employees. Employees can lock/unlock
         vehicles = {
             'towtruck',
 	}
+    },
+
+    ['garbage'] = {
+        requireOnduty = false,
+        vehicles = {
+            'trash2',
+	}
     }
 }
 
@@ -63,7 +70,9 @@ Config.ImmuneVehicles = {
 }
 
 -- These vehicles will never lock
-Config.NoLockVehicles = {}
+Config.NoLockVehicles = {
+    'trash2'
+}
 
 -- These weapons cannot be used for carjacking
 Config.NoCarjackWeapons = {
